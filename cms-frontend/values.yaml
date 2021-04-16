@@ -5,12 +5,13 @@
 replicaCount: 1
 
 image:
-  repository: nginx
+  repository: knkcms.azurecr.io/cms-frontend
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "863e6279aa5ca7a5e1a2af5ffcef73b13f0da0e8"
 
-imagePullSecrets: []
+imagePullSecrets:
+  - knkcms-docker-registry-auth
 nameOverride: ""
 fullnameOverride: ""
 
