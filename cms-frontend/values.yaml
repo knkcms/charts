@@ -11,7 +11,7 @@ image:
   tag: "863e6279aa5ca7a5e1a2af5ffcef73b13f0da0e8"
 
 imagePullSecrets:
-  - knkcms-docker-registry-auth
+  - name: knkcms-docker-registry-auth
 nameOverride: ""
 fullnameOverride: ""
 
