@@ -7,7 +7,7 @@ image:
   repository: knkcms.azurecr.io/cms-frontend
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "8712b11"
+  tag: "b93e4d3"
 imagePullSecrets:
   - name: knkcms-docker-registry-auth
 nameOverride: ""
