@@ -62,11 +62,11 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      volumes:
-        - name: area-config-file-volume
-          configMap:
-            name: area-config-file
-      volumeMounts:
-        - name: area-config-file-volume
-          mountPath:  /usr/bin/config.yml
-            subPath: config.yaml
+  volumes:
+    - name: area-config-file-volume
+      configMap:
+        name: area-config-file
+  volumeMounts:
+    - name: area-config-file-volume
+      mountPath:  /usr/bin/config.yml
+      subPath: config.yaml
