@@ -6,10 +6,10 @@ data:
   config.yaml: |
     server:
       addr: ""
-      host: ""
-      port: ""
-      proto: ""
+      host: "localhost:8080"
+      port: ":8080"
+      proto: "http"
       pprof: false
       auto_cert: false
       email: ""
-    database: ""
+    database: "postgres://testuser:=rFolFHuue_b:Iwt,}:nR00C@cmspreview.hippo.svc.local:5432/cmspreview?sslmode=disable"
