@@ -1,4 +1,4 @@
-{{- if .Values.ingress.enabled -}}
+{{- if .Values.frontend.ingress.enabled -}}
 {{- $fullName := include "cms-solution.fullname" . -}}
 {{- $svcPort := .Values.area.service.port -}}
 {{- if semverCompare ">=1.14-0" .Capabilities.KubeVersion.GitVersion -}}
