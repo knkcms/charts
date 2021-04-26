@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: area-config
+data:
+  config.yaml: |
+    server:
+      addr: ""
+      host: ""
+      port: ""
+      proto: ""
+      pprof: false
+      auto_cert: false
+      email: ""
+    database: ""
