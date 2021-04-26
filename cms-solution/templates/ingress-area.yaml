@@ -8,7 +8,7 @@ apiVersion: extensions/v1beta1
 {{- end }}
 kind: Ingress
 metadata:
-  name: {{ $fullName }}
+  name: "ingress-area" # {{ $fullName }}
   labels:
     {{- include "cms-solution.labels" . | nindent 4 }}
   {{- with .Values.frontend.ingress.annotations }}
