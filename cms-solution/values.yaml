@@ -64,7 +64,7 @@ frontend:
 
 postgres:
   name: pgo-jiw
-  namespace: pgo
+  namespace: cms-preview
   password: Password
 
 imagePullSecrets:
