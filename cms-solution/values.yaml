@@ -6,7 +6,7 @@ replicaCount: 1
 
 env:
   name: 
-    DATABASE_DSN: "postgres://testuser:=rFolFHuue_b:Iwt,}:nR00C@cmspreview.hippo.svc.local:5432/cmspreview?sslmode=disable" # postgres://{user}:{password}@{hostname}:{port}/{database-name}?sslmode=disable
+    DATABASE_DSN: "postgres://testuser:'=rFolFHuue_b:Iwt,}:nR00C'@cmspreview.hippo.svc.local:5432/cmspreview?sslmode=disable" # postgres://{user}:{password}@{hostname}:{port}/{database-name}?sslmode=disable
 
 area:
   image:
