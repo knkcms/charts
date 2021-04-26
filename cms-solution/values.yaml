@@ -13,7 +13,7 @@ area:
     repository: knkcms.azurecr.io/areaservice-dev
     pullPolicy: IfNotPresent
     # Overrides the image tag whose default is the chart appVersion.
-    tag: "78a1896"
+    tag: "1b983f3"
 
   service:
     type: ClusterIP
