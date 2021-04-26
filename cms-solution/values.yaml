@@ -22,7 +22,7 @@ area:
       kubernetes.io/ingress.class: nginx
       kubernetes.io/tls-acme: "true"
     hosts:
-      - host: cms-frontend.northeurope.az.dev.knkcms.io
+      - host: cms-frontend.northeurope.az.preview.knkcms.io
         paths:
         - path: /api
           backend:
@@ -31,7 +31,7 @@ area:
     tls: 
       - secretName: cms-frontend-tls
         hosts:
-          - cms-frontend.northeurope.az.dev.knkcms.io
+          - cms-frontend.northeurope.az.preview.knkcms.io
 
 frontend:
   image:
@@ -51,7 +51,7 @@ frontend:
       kubernetes.io/ingress.class: nginx
       kubernetes.io/tls-acme: "true"
     hosts:
-      - host: cms-frontend.northeurope.az.dev.knkcms.io
+      - host: cms-frontend.northeurope.az.preview.knkcms.io
         paths:
         - path: /
           backend:
@@ -60,7 +60,7 @@ frontend:
     tls: 
       - secretName: cms-frontend-tls
         hosts:
-          - cms-frontend.northeurope.az.dev.knkcms.io
+          - cms-frontend.northeurope.az.preview.knkcms.io
 
 postgres:
   name: pgo-jiw
