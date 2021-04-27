@@ -16,6 +16,11 @@ metadata:
     {{- toYaml . | nindent 4 }}
   {{- end }}
 spec:
+  defaultBackend:
+    service:
+      name: frontend-service
+      port:
+        number: 80
   {{- if .Values.frontend.ingress.tls }}
   tls:
     {{- range .Values.frontend.ingress.tls }}
