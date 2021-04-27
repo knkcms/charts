@@ -2,6 +2,10 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
+env:
+  name:
+    DATABASE_DSN: "postgres://testuser:%3DrFolFHuue_b%3AIwt%2C%7D%3AnR00C@10.0.36.135:5432/cmspreview?sslmode=disable" # postgres://{user}:{password}@{hostname}:{port}/{database-name}?sslmode=disable
+
 replicaCount: 1
 
 image:
