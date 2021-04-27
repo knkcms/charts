@@ -28,21 +28,21 @@ spec:
   {{- end }}
   rules:
     {{- range .Values.frontend.ingress.hosts }}
-    - host: {{ .host | quote }}
-      http:
-        paths:
-          - path: /api
-            pathType: Prefix
-            backend:
-               service:
-                  name: area-service
-                  port:
-                     number: 8080
-           - path: /
-             backend:
-                service:
-                  name: frontend-service
-                  port:
-                     number: 80
+  - host: {{ .host | quote }}
+    http:
+      paths:
+      - path: /api
+        pathType: Prefix
+        backend:
+          service:
+            name: area-service
+            port:
+              number: 8080
+      - path: /
+        backend:
+          service:
+            name: frontend-service
+            port:
+              number: 80
     {{- end }}
   {{- end }}
