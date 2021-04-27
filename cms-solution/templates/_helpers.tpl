@@ -50,6 +50,11 @@ app.kubernetes.io/name: {{ include "cms-solution.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
+{{- define "cms-solution.selectorLabelsFrontend" -}}
+app.kubernetes.io/name: cms-solution-frontend
+app.kubernetes.io/instance: {{ .Release.Name }}
+{{- end }}
+
 {{/*
 Create the name of the service account to use
 */}}
