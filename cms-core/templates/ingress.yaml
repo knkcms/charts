@@ -45,7 +45,7 @@ spec:
     #           servicePort: {{ $svcPort }}
     #       {{- end }}
     # {{- end }}
-  - host: {{ .host | quote }}
+  - host: {{ .Values.ingress.host | quote }}
     http:
       paths:
       - path: /api
