@@ -65,5 +65,5 @@ Create the name of the service account to use
 Expand the name of the area service.
 */}}
 {{- define "cms-solution.areaServiceName" -}}
-{{- default "areaService" .Values.fullNameOverride }}
+{{- default "area-service" .Values.fullNameOverride }}
 {{- end }}
