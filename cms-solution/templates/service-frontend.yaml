@@ -12,4 +12,5 @@ spec:
       protocol: TCP
       name: app
   selector: 
-    {{- include "cms-solution.selectorLabelsFrontend" . | nindent 4 }}
+    app.kubernetes.io/name: cms-solution-frontend
+    app.kubernetes.io/instance: knkcms
