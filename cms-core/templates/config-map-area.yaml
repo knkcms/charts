@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: area-config
+data:
+  # @TODO change values in config.yaml
+  # postgres://testuser:=rFolFHuue_b:Iwt,}:nR00C@cmspreview.hippo.svc.local:5432/cmspreview?sslmode=disable
+  config.yaml: |
+    server:
+      addr: ""
+      host: "localhost:8080"
+      port: ":8080"
+      proto: "http"
+      pprof: false
+      auto_cert: false
+      email: ""
+    database: "postgres://testuser:%3DrFolFHuue_b%3AIwt%2C%7D%3AnR00C@cmspreview.hippo.svc.local:5432/cmspreview?sslmode=disable"
