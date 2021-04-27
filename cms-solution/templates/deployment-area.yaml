@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: "deployment-area" # {{ include "cms-solution.fullname" . }}
+  name: {{ include "cms-solution.areaServiceName" . }} # "deployment-area" # {{ include "cms-solution.fullname" . }}
   labels:
     {{- include "cms-solution.labels" . | nindent 4 }}
 spec:
