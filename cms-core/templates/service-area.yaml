@@ -5,10 +5,10 @@ metadata:
   labels:
     {{- include "cms-core.labels" . | nindent 4 }}
 spec:
-  type: "ClusterIP" # {{ .Values.service.type }}
+  type: ClusterIP 
   ports:
-    - port: {{ .Values.area.port }} # 8080 # {{ .Values.service.port }}
-      targetPort: {{ .Values.area.port }} # 8080
+    - port: {{ .Values.area.port }} 
+      targetPort: {{ .Values.area.port }} 
       protocol: TCP
       name: http
   selector:
