@@ -10,5 +10,6 @@ spec:
     - port: {{ .Values.frontend.service.port }}
       targetPort: http
       protocol: TCP
+      name: frontend-service
   selector: 
     {{- include "cms-solution.selectorLabels" . | nindent 4 }}
