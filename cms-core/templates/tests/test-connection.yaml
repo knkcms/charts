@@ -11,5 +11,5 @@ spec:
     - name: wget
       image: busybox
       command: ['wget']
-      args: ['{{ include "cms-core.fullname" . }}:{{ .Values.service.port }}']
+      args: ['{{ include "cms-core.fullname" . }}:{{ .Values.frontend.port }}']
   restartPolicy: Never
