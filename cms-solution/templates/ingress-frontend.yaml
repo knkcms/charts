@@ -27,8 +27,7 @@ spec:
     {{- end }}
   {{- end }}
   rules:
-    {{- range .Values.frontend.ingress.hosts }}
-  - host: {{ .host | quote }}
+  - host: cms-frontend.northeurope.az.preview.knkcms.io
     http:
       paths:
       - path: /api
@@ -44,5 +43,3 @@ spec:
             name: frontend-service
             port:
               number: 80
-    {{- end }}
-  {{- end }}
