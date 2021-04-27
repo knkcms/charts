@@ -5,10 +5,10 @@ metadata:
   labels:
     {{- include "cms-core.labels" . | nindent 4 }}
 spec:
-  type: {{ .Values.service.type }}
+  type: ClusterIP # {{ .Values.service.type }}
   ports:
-    - port: {{ .Values.service.port }}
-      targetPort: http
+    - port: {{ .Values.frontend.port }}
+      targetPort: {{ .Values.frontend.port }}
       protocol: TCP
       name: http
   selector:

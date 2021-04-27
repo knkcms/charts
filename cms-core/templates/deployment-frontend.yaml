@@ -35,7 +35,7 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
-              containerPort: 80 # @TODO depend on values.yaml
+              containerPort: {{ .Values.frontend.port }} # @TODO depend on values.yaml
               protocol: TCP
           livenessProbe:
             httpGet:

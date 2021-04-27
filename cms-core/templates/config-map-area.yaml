@@ -8,8 +8,8 @@ data:
   config.yaml: |
     server:
       addr: ""
-      host: "localhost:8080"
-      port: ":8080"
+      host: "localhost:{{ .Values.area.port }}"
+      port: ":{{ .Values.area.port }}"
       proto: "http"
       pprof: false
       auto_cert: false

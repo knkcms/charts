@@ -8,17 +8,19 @@ env:
 
 replicaCount: 1
 
-image:
-  # repository: nginx
-  pullPolicy: IfNotPresent
-  # Overrides the image tag whose default is the chart appVersion.
-  # tag: ""
-  area:
+area:
+  image:
+    pullPolicy: IfNotPresent
     repository: knkcms.azurecr.io/areaservice-dev
     tag: "d05a0ca"
-  frontend:
+  port: 8080
+
+frontend:
+  image:
+    pullPolicy: IfNotPresent
     repository: knkcms.azurecr.io/cms-frontend-dev
     tag: "b93e4d3"
+  port: 80
 
 imagePullSecrets: []
 nameOverride: ""
@@ -46,10 +48,6 @@ securityContext: {}
   # runAsNonRoot: true
   # runAsUser: 1000
 
-service:
-  type: ClusterIP
-  port: 80
-
 ingress:
   enabled: true
   annotations:
@@ -59,8 +57,7 @@ ingress:
     kubernetes.io/tls-acme: "true"
   # hosts:
   host: cms-frontend.northeurope.az.preview.knkcms.io
-  areaServicePort: 8080
-  frontendServicePort: 80
+
   tls: 
   - secretName: cms-frontend-tls
     hosts:
