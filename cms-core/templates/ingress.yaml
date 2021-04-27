@@ -41,5 +41,3 @@ spec:
             name: {{ include "cms-core.frontendService" . }}
             port:
               number: {{ .Values.frontend.port }} # 80 # @TODO replace from values.yaml
-
-  {{- end }}
