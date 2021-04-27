@@ -52,7 +52,7 @@ frontend:
         paths:
           - path: /
             backend:
-              serviceName: cms-frontend
+              serviceName: frontend-service
               servicePort: 80
     tls:
       - secretName: cms-frontend-tls
