@@ -35,7 +35,7 @@ spec:
           imagePullPolicy: {{ .Values.area.image.pullPolicy }}
           ports:
             - name: http
-              containerPort: 80
+              containerPort: 8080 # @TODO depends on config
               protocol: TCP
           livenessProbe:
             httpGet:
