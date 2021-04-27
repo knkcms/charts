@@ -12,4 +12,4 @@ spec:
       protocol: TCP
       name: app
   selector: 
-    {{- include "cms-solution.selectorLabels" . | nindent 4 }}
+    {{- include "cms-solution.selectorLabelsFrontend" . | nindent 4 }}
