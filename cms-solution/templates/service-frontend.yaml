@@ -11,5 +11,5 @@ spec:
       targetPort: http
       protocol: TCP
       name: http
-  selector:
-    {{- include "cms-solution.selectorLabels" . | nindent 4 }}
+  selector: "frontend-service"
+    # {{- include "cms-solution.selectorLabels" . | nindent 4 }}
