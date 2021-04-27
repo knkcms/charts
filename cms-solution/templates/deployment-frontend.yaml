@@ -10,7 +10,8 @@ spec:
   {{- end }}
   selector:
     matchLabels:
-      {{- include "cms-solution.selectorLabelsFrontend" . | nindent 6 }}
+      app.kubernetes.io/name: cms-solution-frontend
+      app.kubernetes.io/instance: knkcms
   template:
     metadata:
       {{- with .Values.podAnnotations }}
@@ -18,7 +19,8 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        {{- include "cms-solution.selectorLabelsFrontend" . | nindent 8 }}
+        app.kubernetes.io/name: cms-solution-frontend
+        app.kubernetes.io/instance: knkcms
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
