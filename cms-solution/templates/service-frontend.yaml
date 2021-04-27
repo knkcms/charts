@@ -10,6 +10,6 @@ spec:
     - port: 80
       targetPort: http
       protocol: TCP
-      name: frontend-service
+      name: app
   selector: 
     {{- include "cms-solution.selectorLabels" . | nindent 4 }}
