@@ -8,7 +8,7 @@ spec:
   type: {{ .Values.area.service.type }}
   ports:
     - port: 8080
-      targetPort: http
+      targetPort: 8080
       protocol: TCP
       name: area-service
   selector: 
