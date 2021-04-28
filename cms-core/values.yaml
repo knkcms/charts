@@ -22,6 +22,12 @@ frontend:
     tag: "b93e4d3"
   port: 80
 
+postgres:
+  name: pgo-jiw
+  namespace: cms-core
+  username: admin
+  password: Password
+
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
