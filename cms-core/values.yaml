@@ -24,7 +24,7 @@ frontend:
 
 postgres:
   name: pgo-jiw
-  namespace: cms-core
+  namespace: pgo
   username: admin
   password: Password
 
