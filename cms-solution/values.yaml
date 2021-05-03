@@ -34,10 +34,10 @@ area:
           - cms-frontend.northeurope.az.preview.knkcms.io
 frontend:
   image:
-    repository: knkcms.azurecr.io/cms-frontend-dev
+    repository: knkcms.azurecr.io/cms-frontend
     pullPolicy: IfNotPresent
     # Overrides the image tag whose default is the chart appVersion.
-    tag: "b93e4d3"
+    tag: "d7c55af"
   service:
     type: ClusterIP
     port: 80
