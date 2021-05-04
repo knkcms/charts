@@ -1,0 +1,21 @@
+apiVersion: "acid.zalan.do/v1"
+kind: postgresql
+metadata:
+  name: {{ .Values.postgres.name | quote }}
+  namespace: {{ .Values.postgres.namespace | quote }}
+spec:
+  teamId: "acid"
+  volume:
+    size: 1Gi
+  numberOfInstances: 2
+  users:
+    {{ .Values.postgres.username | quote }}:  # database owner
+    - superuser
+    - createdb
+    "{{ .Values.postgres.databaseName | quote }}_user": []  # role for application foo
+  databases:
+    {{ .Values.postgres.databaseName | quote }}: {{ .Values.postgres.username | quote }}  # dbname: owner
+  preparedDatabases:
+    bar: {}
+  postgresql:
+    version: "13"

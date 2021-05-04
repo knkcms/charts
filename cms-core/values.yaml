@@ -25,8 +25,9 @@ frontend:
 postgres:
   name: pgo-jiw
   namespace: pgo
+  databaseName: knkcms_core
   username: admin
-  password: Password
+  # password: Password
 
 imagePullSecrets: []
 nameOverride: ""
