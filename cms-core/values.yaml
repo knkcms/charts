@@ -69,12 +69,12 @@ ingress:
     kubernetes.io/ingress.class: nginx
     kubernetes.io/tls-acme: "true"
   # hosts:
-  host: cms-frontend.northeurope.az.preview.knkcms.io
+  host: cms-frontend.northeurope.az.jiwpgo.knkcms.io
 
   tls: 
   - secretName: cms-frontend-tls
     hosts:
-    - cms-frontend.northeurope.az.preview.knkcms.io
+    - cms-frontend.northeurope.az.jiwpgo.knkcms.io
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
