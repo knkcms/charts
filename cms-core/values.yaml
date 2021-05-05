@@ -10,7 +10,7 @@ area:
   image:
     pullPolicy: IfNotPresent
     repository: knkcms.azurecr.io/areaservice-dev
-    tag: "18b6d55"
+    tag: "0c7f58c"
   port: 8080
 frontend:
   image:
