@@ -25,7 +25,7 @@ frontend:
     pullPolicy: IfNotPresent
     repository: knkcms.azurecr.io/cms-frontend
     tag: "d7c55af"
-  port: 80
+  port: 3000
 
 postgres:
   name: pgo-jiw

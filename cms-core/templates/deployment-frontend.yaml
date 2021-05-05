@@ -40,11 +40,11 @@ spec:
           livenessProbe:
             httpGet:
               path: /
-              port: 3000
+              port: {{ .Values.frontend.port }}
           readinessProbe:
             httpGet:
               path: /
-              port: 3000
+              port: {{ .Values.frontend.port }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
