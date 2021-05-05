@@ -50,6 +50,24 @@ spec:
           env:
             - name: AREA_DSN
               value: {{ .Values.env.name.DATABASE_DSN }}
+            - name: DB_NAME
+              value: {{ .Values.postgres.databasename }}
+            - name: DB_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: "{{ .Values.postgres.username }}-user.{{ .Values.postgres.name }}-cluster.credentials.postgresql.acid.zalan.do"
+                  key: "username"
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: "{{ .Values.postgres.username }}-user.{{ .Values.postgres.name }}-cluster.credentials.postgresql.acid.zalan.do"
+                  key: "password"
+            - name: DB_HOST
+              value: "{{ .Values.postgres.name }}-cluster"
+            - name: DB_PORT
+              value: "5432"
+            - name: SSL_MODE
+              value: "required"
           volumeMounts:
             - name: area-config-file-volume
               mountPath:  /usr/bin/config.yml

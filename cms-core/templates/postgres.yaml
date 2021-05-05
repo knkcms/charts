@@ -1,20 +1,20 @@
 apiVersion: "acid.zalan.do/v1"
 kind: postgresql
 metadata:
-  name: {{ .Values.postgres.name | quote }}
-  namespace: {{ .Values.postgres.namespace | quote }}
+  name: "{{ .Values.postgres.name }}-cluster" # "acid-minimal-cluster" # {{ .Values.name }} Name need to start with the value of teamId https://github.com/zalando/postgres-operator/blob/master/docs/user.md
+  namespace: {{ .Values.postgres.namespace }}
 spec:
-  teamId: "acid"
+  teamId: {{ .Values.postgres.name }} # "acid" 
   volume:
     size: 1Gi
   numberOfInstances: 2
   users:
-    {{ .Values.postgres.username | quote }}:  # database owner
+    {{ .Values.postgres.username }}: # zalando:  # database owner
     - superuser
     - createdb
-    "{{ .Values.postgres.databaseName | quote }}_user": []  # role for application foo
+    {{ .Values.postgres.username }}_user: []  # role for application foo
   databases:
-    {{ .Values.postgres.databaseName | quote }}: {{ .Values.postgres.username | quote }}  # dbname: owner
+    {{ .Values.postgres.databasename }}: {{ .Values.postgres.username }} # zalando  # dbname: owner
   preparedDatabases:
     bar: {}
   postgresql:
