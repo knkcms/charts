@@ -24,7 +24,7 @@ frontend:
   image:
     pullPolicy: IfNotPresent
     repository: knkcms.azurecr.io/cms-frontend
-    tag: "b93e4d3"
+    tag: "d7c55af"
   port: 80
 
 postgres:
