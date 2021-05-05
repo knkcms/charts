@@ -8,6 +8,11 @@ env:
 
 replicaCount: 1
 
+docker:
+  registry_server: knkcms.azurecr.io
+  registry_username: knkcms
+  registry_password: 0yrdfkiG/s5QEvEem/emIYBAmrBdhekh
+
 area:
   image:
     pullPolicy: IfNotPresent

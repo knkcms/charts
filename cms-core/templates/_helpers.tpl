@@ -90,3 +90,10 @@ Selector frontend labels
 app.kubernetes.io/name: {{ include "cms-core.frontendService" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
+
+{{/*
+Docker Secrets
+*/}}
+{{- define "imagePullSecret" }}
+{{- printf "{\"auths\": {\"%s\": {\"auth\": \"%s\"}}}" .Values.docker.registry_server (printf "%s:%s" .Values.docker.registry_username .Values.docker.registry_password | b64enc) | b64enc }}
+{{- end }}
