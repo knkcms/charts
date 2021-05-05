@@ -24,7 +24,7 @@ frontend:
 
 postgres:
   name: pgo-jiw
-  namespace: pgo
+  namespace: jiwprev
   databasename: knkcms_core
   username: admin
   # password: Password
