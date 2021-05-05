@@ -34,7 +34,8 @@ postgres:
   username: admin
   # password: Password
 
-imagePullSecrets: [ docker-secrets ]
+imagePullSecrets:
+  - name: docker-secrets
 nameOverride: ""
 fullnameOverride: ""
 
