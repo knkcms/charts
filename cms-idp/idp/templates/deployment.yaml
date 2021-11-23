@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "idp.fullname" . }}
+  name: {{ include "identity.fullname" . }}
   labels:
-    {{- include "idp.labels" . | nindent 4 }}
+    {{- include "identity.labels" . | nindent 4 }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
   selector:
     matchLabels:
-      {{- include "idp.selectorLabels" . | nindent 6 }}
+      {{- include "identity.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       {{- with .Values.podAnnotations }}
@@ -18,13 +18,13 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        {{- include "idp.selectorLabels" . | nindent 8 }}
+        {{- include "identity.selectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "idp.serviceAccountName" . }}
+      serviceAccountName: {{ include "identity.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
@@ -66,4 +66,4 @@ spec:
       volumes:
       - name: config
         configMap: 
-          name: {{ include "idp.fullname" . }}-config
+          name: {{ include "identity.fullname" . }}-config
