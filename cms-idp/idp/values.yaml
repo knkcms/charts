@@ -80,3 +80,63 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+configs:
+  app:
+    key: -JaNdRgUkXn2r5u8x/A?D(G+KbPeShVm
+    url: http://127.0.0.1:8080
+    redirectUri: https://knk.com
+    whitelisted_redirect_uris:
+      - knk.com
+      - id.knkcms.io
+  courier:
+    sender: knkCMS <noreply@knkcms.io>
+    nats:
+      url: tcp://127.0.0.1:4222
+    driver:
+      type: ses
+      config:
+        key: AKIA5NI7XVVPTM2X36OF
+        secret: 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
+        region: eu-west-1
+  sentry:
+    url: https://0ca5018b0f1a43ad9f8408c3d1356736@sentry.prod.int-tools.knkcms.io/2
+    environment: development
+  server:
+    api:
+      addr: 0.0.0.0:8001
+      timeout: 1s
+    ui:
+      addr: 0.0.0.0:8080
+      timeout: 60s
+    grpc:
+      addr: 0.0.0.0:9001
+      timeout: 1s
+  repository:
+    type: sqlite3
+    config:
+      file: var/sqlite/db.db
+  session:
+    cookieDomain: "*.knkcms.io"
+    cookieName: "x-session-id"
+    driver: redis
+    config:
+      host: 127.0.0.1
+      password: "sOmE_sEcUrE_pAsS"
+      port: 6379
+      database: 1
+  connectors: []
+  #  - type: microsoft
+  #    id: microsoft
+  #    name: Microsoft
+  #    config:
+  #      clientID: 83bf29f3-7513-4cf9-af1e-5481ae01b22f
+  #      clientSecret: t0i7Q~k28Ms3tDA4Eh-wDACMaIbPgwLG3ZTH2
+  #      redirectURI: http://127.0.0.1:8080/callback
+  #  - type: github
+  #    id: github
+  #    name: GitHub
+  #    config:
+  #      clientID: cf9ff4c5fab0314805ad
+  #      clientSecret: 5fcdf17d75260ca7ca960633d2be6b10a21314ce
+  #      redirectURI: http://127.0.0.1:8080/callback
