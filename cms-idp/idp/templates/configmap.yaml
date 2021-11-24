@@ -8,10 +8,10 @@ data:
   config.yaml: |-
     app:
       key: {{ .Values.configs.app.key }}
-      url: {{ .Values.configs.app.url }}
+      baseurl: {{ .Values.configs.app.baseurl }}
       redirectUri: {{ .Values.configs.app.redirectUri }}
-      {{- with .Values.configs.app.whitelisted_redirect_uris }}
-      whitelisted_redirect_uris: 
+      {{- with .Values.configs.app.allowance }}
+      allowance: 
         {{- toYaml . | nindent 8 }}
       {{- end }}
     courier:
@@ -31,6 +31,9 @@ data:
       api:
         addr: {{ .Values.configs.server.api.addr }}
         timeout: {{ .Values.configs.server.api.timeout }}
+      ui: 
+        addr: {{ .Values.configs.server.ui.addr }}
+        timeout: {{ .Values.configs.server.ui.timeout }}
       grpc:
         addr: {{ .Values.configs.server.grpc.addr }}
         timeout: {{ .Values.configs.server.grpc.timeout }}
@@ -38,12 +41,12 @@ data:
       type: {{ .Values.configs.repository.type }}
       config:
         database: {{ .Values.configs.repository.config.database }}
-        user: {{ .Values.configs.repository.config.user }}
+        user: {{ include "postgres.username" . }}
         password: {{ .Values.configs.repository.config.password }}
         host: {{ .Values.configs.repository.config.host }}
         port: {{ .Values.configs.repository.config.port }}
     session:
-      cookieDomain: {{ .Values.configs.session.cookieDomain }}
+      cookieDomain: {{ .Values.configs.session.cookieDomain | quote }}
       cookieName: {{ .Values.configs.session.cookieName }}
       driver: {{ .Values.configs.session.driver }}
       config: 

@@ -86,9 +86,9 @@ affinity: {}
 configs:
   app:
     key: -JaNdRgUkXn2r5u8x/A?D(G+KbPeShVm
-    url: http://127.0.0.1:8080
+    baseurl: http://127.0.0.1:8080
     redirectUri: https://knk.com
-    whitelisted_redirect_uris:
+    allowance:
       - knk.com
       - id.knkcms.io
   courier:

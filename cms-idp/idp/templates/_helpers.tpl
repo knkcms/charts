@@ -60,3 +60,10 @@ Create the name of the service account to use
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}
 {{- end }}
+
+{{/*
+Define the username for Azure Mgt. Postgres.
+*/}}
+{{- define "postgres.username" -}}
+{{- printf "%s@%s" .Values.configs.repository.config.user .Values.configs.repository.config.host }}
+{{- end }}
