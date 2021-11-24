@@ -37,7 +37,11 @@ data:
     repository:
       type: {{ .Values.configs.repository.type }}
       config:
-        file: {{ .Values.configs.repository.config.file }}
+        database: {{ .Values.configs.repository.config.database }}
+        user: {{ .Values.configs.repository.config.user }}
+        password: {{ .Values.configs.repository.config.password }}
+        host: {{ .Values.configs.repository.config.host }}
+        port: {{ .Values.configs.repository.config.port }}
     session:
       cookieDomain: {{ .Values.configs.session.cookieDomain }}
       cookieName: {{ .Values.configs.session.cookieName }}

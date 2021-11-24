@@ -117,7 +117,12 @@ configs:
   repository:
     type: sqlite3
     config:
-      file: var/sqlite/db.db
+      # file: var/sqlite/db.db
+      database: 
+      user:
+      password:
+      host:
+      port:
   session:
     cookieDomain: "*.knkcms.io"
     cookieName: "x-session-id"
