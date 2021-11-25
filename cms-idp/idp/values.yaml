@@ -132,18 +132,18 @@ configs:
       password: "sOmE_sEcUrE_pAsS"
       port: 6379
       database: 1
-  connectors: []
-  #  - type: microsoft
-  #    id: microsoft
-  #    name: Microsoft
-  #    config:
-  #      clientID: 83bf29f3-7513-4cf9-af1e-5481ae01b22f
-  #      clientSecret: t0i7Q~k28Ms3tDA4Eh-wDACMaIbPgwLG3ZTH2
-  #      redirectURI: http://127.0.0.1:8080/callback
-  #  - type: github
-  #    id: github
-  #    name: GitHub
-  #    config:
-  #      clientID: cf9ff4c5fab0314805ad
-  #      clientSecret: 5fcdf17d75260ca7ca960633d2be6b10a21314ce
-  #      redirectURI: http://127.0.0.1:8080/callback
+  connectors: 
+    - type: microsoft
+      id: microsoft
+      name: Microsoft
+      config:
+        clientID: 83bf29f3-7513-4cf9-af1e-5481ae01b22f
+        clientSecret: t0i7Q~k28Ms3tDA4Eh-wDACMaIbPgwLG3ZTH2
+        redirectURI: http://127.0.0.1:8080/callback
+    - type: github
+      id: github
+      name: GitHub
+      config:
+        clientID: cf9ff4c5fab0314805ad
+        clientSecret: 5fcdf17d75260ca7ca960633d2be6b10a21314ce
+        redirectURI: http://127.0.0.1:8080/callback
