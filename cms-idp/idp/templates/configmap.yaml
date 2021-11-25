@@ -55,6 +55,6 @@ data:
         port: {{ .Values.configs.session.config.port }}
         database: {{ .Values.configs.session.config.database }}
     {{- with .Values.configs.connectors }}
-    connectors
+    connectors:
       {{- toYaml . | nindent 6 }}
     {{- end }}
