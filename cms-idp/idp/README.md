@@ -48,3 +48,15 @@ The following describes the values for the chart.
 |tolerations|List block.|❌|-|
 |affinity|List|❌|-|
 |configs|Provide the configuration for the `identity` service. These values are needed to create the configmap. For configuration details take a look into [configuration](https://knk-cms.atlassian.net/wiki/spaces/identity/pages/1187381266/Configuration) of the `identity`.|✅|-|
+
+## Kubernetes Resources
+The Helm Chart will create the following resources into the *kubernetes* cluster.
+
+|Resource|Dscription|
+|--------|----------|
+|Configmap|The Configmap stores all information to configure the `identity` service. The are coming from the `configs` part of the values.yaml|
+|Deployment|The Deployment will create the pods and replica sets in kubernetes.|
+|HorizontalPodAutoscaler|The horizontal pod autoscaler will only be created when the values.yaml include autoscaling.enabled equals true.|
+|Ingress|The ingress will only be created when the values.yaml include ingress.enabled equals true.|
+|Service|The Service is used to connect to the pods of the Deployment|
+|ServiceAccount|The ServiceAccount is the account used to access the ressources within the *kubernetes* cluster.|
