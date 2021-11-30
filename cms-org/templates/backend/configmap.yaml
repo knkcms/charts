@@ -29,6 +29,6 @@ data:
     domain:
       {{- with .Values.backend.configs.domain.system_domains }}
       system_domains:
-        {{- toYaml . | nindent 4 }}
+        {{- toYaml . | nindent 6 }}
       {{- end }}
       subdomain_transition_period: {{ .Values.backend.configs.domain.subdomain_transition_period }}
