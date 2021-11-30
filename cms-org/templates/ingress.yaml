@@ -45,10 +45,10 @@ spec:
     - host: {{ .host | quote }}
       http:
         paths:
-          #{{- if $backendEnabled -}}
-          - path: /
+          {{- range .paths }}
+          - path: {{ .path }}
             {{- if and .pathType (semverCompare ">=1.18-0" $.Capabilities.KubeVersion.GitVersion) }}
-            pathType: Prefix
+            pathType: {{ .pathType }}
             {{- end }}
             backend:
               {{- if semverCompare ">=1.19-0" $.Capabilities.KubeVersion.GitVersion }}
@@ -60,22 +60,6 @@ spec:
               serviceName: {{ $fullName }}-backend
               servicePort: {{ $backendSvcPort }}
               {{- end }}
-          # {{- end }}
-          # {{- if $frontendEnabled -}}
-          # - path: /
-          #   {{- if and .pathType (semverCompare ">=1.18-0" $.Capabilities.KubeVersion.GitVersion) }}
-          #   pathType: Prefix
-          #   {{- end }}
-          #   backend:
-          #     {{- if semverCompare ">=1.19-0" $.Capabilities.KubeVersion.GitVersion }}
-          #     service:
-          #       name: {{ $fullName }}-frontend
-          #       port:
-          #         number: {{ $frontendSvcPort }}
-          #     {{- else }}
-          #     serviceName: {{ $fullName }}-frontend
-          #     servicePort: {{ $frontendSvcPort }}
-          #     {{- end }}
-          # {{- end }}
+          {{- end }}
     {{- end }}
 {{- end }}
