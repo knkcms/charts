@@ -1,6 +1,7 @@
 {{- if .Values.ingress.enabled -}}
 {{- $fullName := include "cms-org.fullname" . -}}
 {{- $svcPort := .Values.backend.service.port -}}
+{{- $backendEnabled := .Values.backend.enabled -}}
 {{- if and .Values.ingress.className (not (semverCompare ">=1.18-0" .Capabilities.KubeVersion.GitVersion)) }}
   {{- if not (hasKey .Values.ingress.annotations "kubernetes.io/ingress.class") }}
   {{- $_ := set .Values.ingress.annotations "kubernetes.io/ingress.class" .Values.ingress.className}}
@@ -57,7 +58,7 @@ spec:
           #     servicePort: {{ $svcPort }}
           #     {{- end }}
           # {{- end }}
-          {{- if .Values.backend.enabled -}}
+          {{- if $backendEnabled -}}
           - path: / # /api
             pathType: Prefix
             backend:
