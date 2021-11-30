@@ -4,6 +4,7 @@ metadata:
   name: "{{ include "cms-org.fullname" . }}-test-connection"
   labels:
     {{- include "cms-org.labels" . | nindent 4 }}
+    app.kubernetes.io/component: backend
   annotations:
     "helm.sh/hook": test
 spec:
@@ -11,5 +12,5 @@ spec:
     - name: wget
       image: busybox
       command: ['wget']
-      args: ['{{ include "cms-org.fullname"-backend . }}:{{ .Values.backend.service.port }}']
+      args: ['{{ include "cms-org.fullname" . }}-backend:{{ .Values.backend.service.port }}']
   restartPolicy: Never
