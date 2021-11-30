@@ -2,6 +2,9 @@
 {{- $fullName := include "cms-org.fullname" . -}}
 {{- $svcPort := .Values.backend.service.port -}}
 {{- $backendEnabled := .Values.backend.enabled -}}
+{{- $backendSvcPort := .Values.backend.service.port -}}
+{{- $frontendEnabled := .Values.frontend.enabled -}}
+{{- $frontendSvcPort := .Values.frontend.service.port -}}
 {{- if and .Values.ingress.className (not (semverCompare ">=1.18-0" .Capabilities.KubeVersion.GitVersion)) }}
   {{- if not (hasKey .Values.ingress.annotations "kubernetes.io/ingress.class") }}
   {{- $_ := set .Values.ingress.annotations "kubernetes.io/ingress.class" .Values.ingress.className}}
@@ -66,13 +69,13 @@ spec:
               service: 
                 name: {{ $fullName }}-backend
                 port:
-                  number: {{ .Values.backend.service.port }}
+                  number: {{ $backendSvcPort }}
               {{- else }}
               serviceName: {{ $fullName }}-backend
-              servicePort: {{ .Values.backend.service.port }}
+              servicePort: {{ $backendSvcPort }}
               {{- end }}
           {{- end }}
-          {{- if .Values.frontend.enabled -}}
+          {{- if $frontendEnabled -}}
           - path: /
             pathType: Prefix
             backend:
@@ -80,10 +83,10 @@ spec:
               service: 
                 name: {{ $fullName }}-frontend
                 port:
-                  number: {{ .Values.frontend.service.port }}
+                  number: {{ $frontendSvcPort }}
               {{- else }}
               serviceName: {{ $fullName }}-frontend
-              servicePort: {{ .Values.frontend.service.port }}
+              servicePort: {{ $frontendSvcPort }}
               {{- end }}
           {{- end }}
     {{- end }}
