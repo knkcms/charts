@@ -87,7 +87,7 @@ affinity: {}
 configs:
   app:
     key: -JaNdRgUkXn2r5u8x/A?D(G+KbPeShVm
-    baseurl: http://127.0.0.1:8080
+    baseurl: https://idp.jiw.knkcms-jiw.knkcms.io
     redirectUri: https://knk.com
     allowance:
       - knk.com
@@ -140,11 +140,11 @@ configs:
       config:
         clientID: 83bf29f3-7513-4cf9-af1e-5481ae01b22f
         clientSecret: t0i7Q~k28Ms3tDA4Eh-wDACMaIbPgwLG3ZTH2
-        redirectURI: http://127.0.0.1:8080/callback
+        redirectURI: https://idp.jiw.knkcms-jiw.knkcms.io/callback
     - type: github
       id: github
       name: GitHub
       config:
         clientID: cf9ff4c5fab0314805ad
         clientSecret: 5fcdf17d75260ca7ca960633d2be6b10a21314ce
-        redirectURI: http://127.0.0.1:8080/callback
+        redirectURI: https://idp.jiw.knkcms-jiw.knkcms.io/callback
