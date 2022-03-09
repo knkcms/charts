@@ -8,7 +8,7 @@ spec:
   location: {{ .Values.postgres.server.location }}
   owner:
     name: {{ .Values.postgres.server.resourcegroup }}
-  version: {{ .Values.postgres.server.version }}
+  version: {{ .Values.postgres.server.version | quote }}
   sku:
     name: {{ .Values.postgres.server.sku.name }}
     tier: {{ .Values.postgres.server.sku.tier }}
