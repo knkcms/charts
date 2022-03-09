@@ -162,3 +162,5 @@ postgres:
     credentials:
       user: knkAdmin
       password: knk4CloudH2oterror
+nats:
+  create: true
