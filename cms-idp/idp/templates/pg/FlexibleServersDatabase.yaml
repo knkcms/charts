@@ -1,0 +1,9 @@
+# apiVersion: dbforpostgresql.azure.com/v1alpha1api20210601
+# kind: FlexibleServersDatabase
+# metadata:
+#   name: votedb
+#   namespace: asodemo
+# spec:
+#   owner:
+#     name: ${SERVER}
+#   charset: utf8
