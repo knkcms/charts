@@ -1,0 +1,7 @@
+apiVersion: resources.azure.com/v1alpha1api20200601
+kind: ResourceGroup
+metadata:
+  name: {{ .Values.postgres.server.resourcegroup }}
+  namespace: {{ .Values.postgres.server.namespace }}
+spec:
+  location: {{ .Values.postgres.server.location }}

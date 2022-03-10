@@ -5,7 +5,6 @@ metadata:
   name: {{ .Values.postgres.server.name }}
   namespace: {{ .Values.postgres.server.namespace }}
 spec:
-  azureName: testknkcms
   location: {{ .Values.postgres.server.location }}
   owner:
     name: {{ .Values.postgres.server.resourcegroup }}
