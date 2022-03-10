@@ -154,7 +154,7 @@ postgres:
     name: test
     namespace: default
     location: westeurope
-    resourcegroup: jiw-test-aso
+    resourcegroup: jiw-test-aso2
     version: 13
     sku:
       name: Standard_D4s_v3
