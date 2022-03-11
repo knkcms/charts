@@ -152,12 +152,12 @@ azure:
   kubernetesNamespace: default
   location: westeurope
   resourceGroup:
-    create: true
-    name: idp-test
+    create: false
+    name: knkcms-eu-west-rg
   postgres:
     server:
       create: true
-      name: test
+      name: knkcms-idp
       version: 13
       sku:
         name: Standard_D4s_v3
