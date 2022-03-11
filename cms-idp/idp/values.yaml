@@ -152,8 +152,8 @@ azure:
   kubernetesNamespace: default
   location: westeurope
   resourceGroup:
-    create: false
-    name: knkcms-eu-west-rg
+    create: true
+    name: knkcms-idp
   postgres:
     server:
       create: true
