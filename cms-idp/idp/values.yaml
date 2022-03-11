@@ -148,19 +148,38 @@ configs:
         clientID: cf9ff4c5fab0314805ad
         clientSecret: 5fcdf17d75260ca7ca960633d2be6b10a21314ce
         redirectURI: https://idp.jiw.knkcms-jiw.knkcms.io/callback
-postgres:
-  server:
+azure:
+  kubernetesNamespace: default
+  location: westeurope
+  resourceGroup:
+    create: false
+    name: knkcms-eu-west-rg
+  postgres:
+    server:
+      create: true
+      name: test
+      version: 13
+      sku:
+        name: Standard_D4s_v3
+        tier: GeneralPurpose
+      username: knkAdmin
+        # secret: TODO
+        # password: knk4CloudH2oterror
+      firewall:
+        createAzureRule: true
+    database:
+      create: true
+      name: knkcms-idp
+  redis:
     create: true
-    name: test
-    namespace: default
-    location: westeurope
-    resourcegroup: jiw-test-aso3
-    version: 13
-    sku:
-      name: Standard_D4s_v3
-      tier: GeneralPurpose
-    credentials:
-      user: knkAdmin
-      password: knk4CloudH2oterror
+    name: knkcms-idp
+    version: 6
+    sku: 
+      family: C
+      name: Basic
+      capacity: 0
+    enableNonSslPort: false
+    minimumTlsVersion: 1.2
+
 nats:
   create: true
