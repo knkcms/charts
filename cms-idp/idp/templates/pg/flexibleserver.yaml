@@ -20,7 +20,7 @@ stringData:
   SERVER:   "{{ .Values.azure.postgres.database.name }}.postgres.database.azure.com"
   DATABASE: {{ .Values.azure.postgres.database.name }}
   PORT:     "5432"
-
+---
 apiVersion: dbforpostgresql.azure.com/v1alpha1api20210601
 kind: FlexibleServer
 metadata:
