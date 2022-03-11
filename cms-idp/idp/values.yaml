@@ -116,7 +116,7 @@ configs:
       addr: 0.0.0.0:9001
       timeout: 1s
   repository:
-    type: sqlite3
+    type: postgres
     config:
       # file: var/sqlite/db.db
       database: 
@@ -152,8 +152,8 @@ azure:
   kubernetesNamespace: default
   location: westeurope
   resourceGroup:
-    create: false
-    name: knkcms-eu-west-rg
+    create: true
+    name: idp-test
   postgres:
     server:
       create: true
