@@ -12,10 +12,10 @@ spec:
   sku:
     name: {{ .Values.azure.postgres.server.sku.name }}
     tier: {{ .Values.azure.postgres.server.sku.tier }}
-  administratorLogin: {{ .Values.azure.postgres.server.credentials.user }}
+  administratorLogin: {{ .Values.azure.postgres.server.username }}
   administratorLoginPassword: 
-    name: TODO
-    key: TODO
+    name: postgres-secret
+    key: PASSWORD
   storage:
     storageSizeGB: 128
 {{- end }}
