@@ -17,7 +17,7 @@ data:
     courier:
       sender: {{ .Values.configs.courier.sender }}
       nats:
-        url: {{ .Values.configs.courier.nats.url }}
+        url: {{ include "nats.url" . }}
       driver:
         type: {{ .Values.configs.courier.driver.type }}
         config:
@@ -41,7 +41,7 @@ data:
       type: {{ .Values.configs.repository.type }}
       config:
         database: {{ .Values.configs.repository.config.database }}
-        user: {{ include "postgres.username" . }}
+        user: {{ .Values.azure.postgres.server.username }}
         password: {{ .Values.configs.repository.config.password }}
         host: {{ .Values.configs.repository.config.host }}
         port: {{ .Values.configs.repository.config.port }}

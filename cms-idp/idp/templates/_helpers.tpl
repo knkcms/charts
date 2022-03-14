@@ -67,3 +67,10 @@ Define the username for Azure Mgt. Postgres.
 {{- define "postgres.username" -}}
 {{- printf "%s@%s" .Values.configs.repository.config.user .Values.configs.repository.config.host }}
 {{- end }}
+
+{{/*
+Define the url for NATS.
+*/}}
+{{- define "nats.url" -}}
+{{- printf "%s.%s.svc.cluster.local" idp-nats default }}
+{{- end }}
