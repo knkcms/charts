@@ -75,5 +75,5 @@ Define the url for NATS.
 {{/*
 {{- $natsSvc := index .Values "idp-nats" "idp-nats" }}
 */}}
-{{- printf "%s.%s.svc.cluster.local" `"idp-nats"` "default" }}
+{{- printf "%s.%s.svc.cluster.local" `idp-nats` "default" }}
 {{- end }}
