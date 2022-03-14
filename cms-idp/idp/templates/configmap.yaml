@@ -40,17 +40,17 @@ data:
     repository:
       type: {{ .Values.configs.repository.type }}
       config:
-        database: {{ .Values.configs.repository.config.database }}
+        database: {{ .Values.azure.postgres.database.name }}
         user: {{ .Values.azure.postgres.server.username }}
-        password: {{ .Values.configs.repository.config.password }}
-        host: {{ .Values.configs.repository.config.host }}
-        port: {{ .Values.configs.repository.config.port }}
+        password: "TODO"
+        host: {{ include "postgres.url" . }}
+        port: {{ .Values.azure.postgres.server.port }}
     session:
       cookieDomain: {{ .Values.configs.session.cookieDomain | quote }}
       cookieName: {{ .Values.configs.session.cookieName }}
       driver: {{ .Values.configs.session.driver }}
       config: 
-        host: {{ .Values.configs.session.config.host }}
+        host: {{ include "redis.url" . }}
         password: {{ .Values.configs.session.config.password }}
         port: {{ .Values.configs.session.config.port }}
         database: {{ .Values.configs.session.config.database }}

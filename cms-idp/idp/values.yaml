@@ -163,6 +163,7 @@ azure:
         name: Standard_D4s_v3
         tier: GeneralPurpose
       username: knkAdmin
+      port: 5432
         # secret: TODO
         # password: knk4CloudH2oterror
       firewall:

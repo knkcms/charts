@@ -69,11 +69,25 @@ Define the username for Azure Mgt. Postgres.
 {{- end }}
 
 {{/*
-Define the url for NATS.
+Define the url for NATS. TODO handling with "-" character
 */}}
 {{- define "nats.url" -}}
 {{/*
 {{- $natsSvc := index .Values "idp-nats" "idp-nats" }}
 */}}
 {{- printf "%s.%s.svc.cluster.local" `idp-nats` "default" }}
+{{- end }}
+
+{{/*
+Define the url for Redis. TODO handling with "-" character
+*/}}
+{{- define "redis.url" -}}
+{{- printf "%s.redis.cache.windows.net" `knkcms-idp` }}
+{{- end }}
+
+{{/*
+Define the url for postgres. TODO handling with "-" character
+*/}}
+{{- define "postgres.url" -}}
+{{- printf "%s.postgres.database.azure.com" .Values.azure.postgres.database.name }}
 {{- end }}
