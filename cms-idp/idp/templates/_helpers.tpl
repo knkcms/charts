@@ -72,6 +72,6 @@ Define the username for Azure Mgt. Postgres.
 Define the url for NATS.
 */}}
 {{- define "nats.url" -}}
-{{- $natsSvc := index .Values "idp-nats" }}
+{{- $natsSvc := index .Values "idp-nats" "idp-nats" }}
 {{- printf "%s.%s.svc.cluster.local" $natsSvc "default" }}
 {{- end }}
