@@ -37,9 +37,9 @@ jobs:
         run: |
           helm-docs -t README.md.gotmpl -o README.md
       # Prepare git for private repos
-    - name: Prepare git
-      run: |
-        ls -R
+      - name: Prepare git
+        run: |
+          ls -R
         
       # - name: Run Artifact Hub lint
       #   run: |
