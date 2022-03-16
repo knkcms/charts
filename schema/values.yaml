@@ -1,0 +1,122 @@
+# -- (int) Numbers of replicas
+replicaCount: 1
+
+image:
+  # -- The docker image repository to use
+  repository: knkcms.azurecr.io/cms-schema
+  # -- The docker image pull policy
+  pullPolicy: IfNotPresent
+  # -- The docker image tag to use. 
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: ""
+
+# -- List of secrets to pull from the image repository
+imagePullSecrets:
+  - name: docker-cfg
+# -- String to override the default generated name
+nameOverride: ""
+# -- String to override the default generated fullname
+fullnameOverride: ""
+
+serviceAccount:
+  # -- Specifies whether a ServiceAccount should be created
+  create: true
+  # -- Annotations to add to the service account
+  annotations: {}
+  # -- The name of the ServiceAccount to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+# -- Annotations to add to the pod
+podAnnotations: {}
+
+# -- Defines privilege and access control settings for a Pod or Container
+podSecurityContext: {}
+  # fsGroup: 2000
+
+# -- Define the security settings to apply
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+service:
+  # -- Specifies the type of Service to create
+  type: ClusterIP
+  # -- (int) Defines the port number of the Service
+  port: 80
+
+ingress:
+  # -- Specifies whether an Ingress should be created
+  enabled: false
+  # -- Defines the class of the Ingress
+  className: nginx
+  # -- Annotations of the Ingress
+  annotations: {}
+    kubernetes.io/tls-acme: "true"
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+  # -- List of host for the Ingress
+  hosts:
+    - host: schema.knkcms-eu-west.knkcms.io
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  # -- List of secrets for the host definition
+  tls:
+    - secretName: schema-tls
+      hosts:
+        - schema.knkcms-eu-west.knkcms.io
+
+# -- Set the resources requests and limits
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+# -- Set the node selector for the pod.
+nodeSelector: {}
+
+# -- Set the tolerations for the pod.
+tolerations: []
+
+# -- Set the affinity for the pod.
+affinity: {}
+
+azure:
+  kubernetesNamespace: default
+  location: westeurope
+  resourceGroup:
+    create: true
+    name: knkcms-dev
+  postgres:
+    server:
+      create: true
+      name: knkcms-dev
+      version: 13
+      sku:
+        name: Standard_D4s_v3
+        tier: GeneralPurpose
+      username: knkAdmin
+      port: 5432
+      firewall:
+        createAzureRule: true
+    database:
+      create: true
+      name: knkcms-dev
