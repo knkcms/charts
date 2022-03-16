@@ -36,6 +36,11 @@ jobs:
       - name: run helm-docs
         run: |
           helm-docs -t README.md.gotmpl -o README.md
+      # Prepare git for private repos
+    - name: Prepare git
+      run: |
+        ls -R
+        
       # - name: Run Artifact Hub lint
       #   run: |
       #     curl -s https://api.github.com/repos/artifacthub/hub/releases/latest | grep -E 'browser_download_url' | grep linux_amd64 | grep -Eo 'https://[^\"]*' | xargs wget -O - | tar -xz
