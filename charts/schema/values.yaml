@@ -55,7 +55,7 @@ ingress:
   # -- Defines the class of the Ingress
   className: nginx
   # -- Annotations of the Ingress
-  annotations: {}
+  annotations:
     kubernetes.io/tls-acme: "true"
     cert-manager.io/cluster-issuer: letsencrypt-prod
   # -- List of host for the Ingress
