@@ -99,50 +99,49 @@ tolerations: []
 # -- Set the affinity for the pod.
 affinity: {}
 
-
-# configs:
-#   sentry:
-#     url: https://0ca5018b0f1a43ad9f8408c3d1356736@sentry.prod.int-tools.knkcms.io/2
-#     environment: development
-#   server:
-#     api:
-#       addr: 0.0.0.0:8001
-#       timeout: 1s
-#     grpc:
-#       addr: 0.0.0.0:9001
-#       timeout: 1s
-# azure:
-#   # -- Namespace where the CRDs are placed to
-#   kubernetesNamespace: default
-#   # -- Set the Azure Location of the resources
-#   location: westeurope
-#   resourceGroup:
-#     # -- Specifies whether a Resource Group should be created
-#     create: true
-#     # -- Name of the Resource Group
-#     name: knkcms-dev
-#   postgres:
-#     server:
-#       # -- Specifies whether a Postgres Server should be created
-#       create: true
-#       # -- Name of the Postgres Server
-#       name: knkcms-dev
-#       # -- Version of the Postgres Server
-#       version: 13
-#       sku:
-#         # -- SKU Name of the Postgres Server
-#         name: Standard_D4s_v3
-#         # -- SKU Tier of the Postgres Server
-#         tier: GeneralPurpose
-#       # -- Username of the initial Postgres Server User
-#       username: knkAdmin
-#       # -- (int) Port of the Postgres Server
-#       port: 5432
-#       firewall:
-#         # -- Specifies whether to enable access of Azure Resources to the Postgres Server
-#         createAzureRule: true
-#     database:
-#       # -- Specifies whether a Postgres Database should be created
-#       create: true
-#       # -- Name of the Postgres Database
-#       name: knkcms-dev
+configs:
+  sentry:
+    url: https://0ca5018b0f1a43ad9f8408c3d1356736@sentry.prod.int-tools.knkcms.io/2
+    environment: development
+  server:
+    api:
+      addr: 0.0.0.0:8001
+      timeout: 1s
+    grpc:
+      addr: 0.0.0.0:9001
+      timeout: 1s
+azure:
+  # -- Namespace where the CRDs are placed to
+  kubernetesNamespace: default
+  # -- Set the Azure Location of the resources
+  location: westeurope
+  resourceGroup:
+    # -- Specifies whether a Resource Group should be created
+    create: true
+    # -- Name of the Resource Group
+    name: knkcms-dev
+  postgres:
+    server:
+      # -- Specifies whether a Postgres Server should be created
+      create: true
+      # -- Name of the Postgres Server
+      name: knkcms-dev
+      # -- Version of the Postgres Server
+      version: 13
+      sku:
+        # -- SKU Name of the Postgres Server
+        name: Standard_D4s_v3
+        # -- SKU Tier of the Postgres Server
+        tier: GeneralPurpose
+      # -- Username of the initial Postgres Server User
+      username: knkAdmin
+      # -- (int) Port of the Postgres Server
+      port: 5432
+      firewall:
+        # -- Specifies whether to enable access of Azure Resources to the Postgres Server
+        createAzureRule: true
+    database:
+      # -- Specifies whether a Postgres Database should be created
+      create: true
+      # -- Name of the Postgres Database
+      name: knkcms-dev

@@ -1,26 +1,4 @@
 {{- if .Values.azure.postgres.server.create }}
-apiVersion: v1
-kind: Secret
-metadata:
-  name: postgres-secret # TODO name as const
-  namespace: {{ .Values.azure.kubernetesNamespace }}
-type: Opaque
-stringData:
-  USERNAME: {{ .Values.azure.postgres.server.username }}
-  # retrieve the pwd data using lookup function and when not exists, return an empty dictionary / map as result
-  {{- $pwd := (lookup "v1" "Secret" .Release.Namespace "jwt-pwd") | default dict }}
-  {{- $pwdData := (get $pwd "data") | default dict }}
-  # set $pwdSecret to existing secret data or generate a random one when not exists
-  {{- $pwdSecret := (get $pwdData "PASSWORD") | default (randAlphaNum 32 | b64enc) }}
-  # {{- $pwdSecret := (get $pwdData "PASSWORD") | default (randAlphaNum 32) }}
-  # generate 32 chars long random string, base64 encode it and then double-quote the result string.
-  PASSWORD: {{ $pwdSecret | b64enc | quote }}
-  # PASSWORD: {{ $pwdSecret | b64enc }}
-  # PASSWORD: "knk4CloudH2oterror"
-  SERVER:   "{{ .Values.azure.postgres.database.name }}.postgres.database.azure.com"
-  DATABASE: {{ .Values.azure.postgres.database.name }}
-  PORT:     "5432"
----
 apiVersion: dbforpostgresql.azure.com/v1alpha1api20210601
 kind: FlexibleServer
 metadata:
