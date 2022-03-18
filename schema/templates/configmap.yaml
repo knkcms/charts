@@ -20,7 +20,7 @@ data:
         addr: {{ .Values.configs.server.grpc.addr }}
         timeout: {{ .Values.configs.server.grpc.timeout }}
     repository:
-      type: {{ .Values.configs.repository.type }}
+      type: postgres
       config:
         database: {{ .Values.azure.postgres.database.name }}
         user: {{ .Values.azure.postgres.server.username }}
