@@ -13,9 +13,6 @@ data:
       api:
         addr: {{ .Values.configs.server.api.addr }}
         timeout: {{ .Values.configs.server.api.timeout }}
-      ui: 
-        addr: {{ .Values.configs.server.ui.addr }}
-        timeout: {{ .Values.configs.server.ui.timeout }}
       grpc:
         addr: {{ .Values.configs.server.grpc.addr }}
         timeout: {{ .Values.configs.server.grpc.timeout }}
