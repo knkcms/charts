@@ -63,7 +63,8 @@ Create the name of the service account to use
 
 {{/*
 Define the url for postgres. TODO handling with "-" character
-*/}}
+
 {{- define "postgres.url" -}}
 {{- printf "%s.postgres.database.azure.com" .Values.azure.postgres.database.name }}
 {{- end }}
+*/}}
