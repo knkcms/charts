@@ -99,6 +99,7 @@ tolerations: []
 # -- Set the affinity for the pod.
 affinity: {}
 
+
 # configs:
 #   sentry:
 #     url: https://0ca5018b0f1a43ad9f8408c3d1356736@sentry.prod.int-tools.knkcms.io/2
