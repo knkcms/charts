@@ -60,3 +60,10 @@ Create the name of the service account to use
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}
 {{- end }}
+
+{{/*
+Define the url for postgres. TODO handling with "-" character
+*/}}
+{{- define "postgres.url" -}}
+{{- printf "%s.postgres.database.azure.com" .Values.azure.postgres.database.name }}
+{{- end }}
