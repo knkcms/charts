@@ -105,10 +105,14 @@ affinity: {}
 configs:
   server:
     api:
-      addr: 0.0.0.0:9281
+      # addr: 0.0.0.0:9281
+      host: 0.0.0.0
+      port: 9281
       timeout: 1s
     grpc:
-      addr: 0.0.0.0:9280
+      # addr: 0.0.0.0:9280
+      host: 0.0.0.0
+      port: 9280
       timeout: 1s
 
 azure:
