@@ -1,4 +1,4 @@
-{{- if .Values.azure.postgres.server.firewall.createAzureRule }}
+{{- if and .Values.azure.postgres.server.firewall.createAzureRule .Values.azure.postgres.server.create }}
 apiVersion: dbforpostgresql.azure.com/v1alpha1api20210601
 kind: FlexibleServersFirewallRule
 metadata:
