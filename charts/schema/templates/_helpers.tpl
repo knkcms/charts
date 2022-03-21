@@ -72,12 +72,12 @@ Define the url for postgres. TODO handling with "-" character
 Define the address for the http based endpoint
 */}}
 {{- define "api.address" -}}
-{{- printf "%s:%c" .Values.configs.server.api.host .Values.configs.server.api.port }}
+{{- printf "%s:%3d" .Values.configs.server.api.host .Values.configs.server.api.port }}
 {{- end }}
 
 {{/*
 Define the address for the grpc based endpoint
 */}}
 {{- define "grpc.address" -}}
-{{- printf "%s:%c" .Values.configs.server.grpc.host .Values.configs.server.grpc.port }}
+{{- printf "%s:%3d" .Values.configs.server.grpc.host .Values.configs.server.grpc.port }}
 {{- end }}
