@@ -11,10 +11,10 @@ data:
       environment: {{ .Values.configs.sentry.environment }}
     server:
       api:
-        addr: {{ .Values.configs.server.api.addr }}
+        addr: {{ include "api.address" . }}
         timeout: {{ .Values.configs.server.api.timeout }}
       grpc:
-        addr: {{ .Values.configs.server.grpc.addr }}
+        addr: {{ include "grpc.address" . }}
         timeout: {{ .Values.configs.server.grpc.timeout }}
     repository:
       type: "postgres"

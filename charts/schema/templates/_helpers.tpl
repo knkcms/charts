@@ -67,3 +67,17 @@ Define the url for postgres. TODO handling with "-" character
 {{- define "postgres.url" -}}
 {{- printf "%s.postgres.database.azure.com" .Values.azure.postgres.database.name }}
 {{- end }}
+
+{{/*
+Define the address for the http based endpoint
+*/}}
+{{- define "api.address" -}}
+{{- printf "%s:%s" .Values.configs.server.api.host .Values.configs.server.api.port }}
+{{- end }}
+
+{{/*
+Define the address for the grpc based endpoint
+*/}}
+{{- define "grpc.address" -}}
+{{- printf "%s:%s" .Values.configs.server.grpc.host .Values.configs.server.grpc.port }}
+{{- end }}
