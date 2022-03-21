@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "content.fullname" . }}-config
+  labels:
+    {{- include "content.labels" . | nindent 4 }}
+data:
+  config.yaml: |-
+    server:
+      api:
+        addr: {{ .Values.configs.server.api.addr }}
+        timeout: {{ .Values.configs.server.api.timeout }}
+      grpc:
+        addr: {{ .Values.configs.server.grpc.addr }}
+        timeout: {{ .Values.configs.server.grpc.timeout }}
+    data:
+      database:
+        driverName: postgres
+        host: {{ include "postgres.url" . }}
+        name: {{ .Values.azure.postgres.database.name }}
+        user: {{ .Values.azure.postgres.server.username }}
+        password: TODO
+        sslmode: disable
+        max_open_connections: 0
+        max_idle_conns: 0
