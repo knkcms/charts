@@ -82,7 +82,7 @@ tolerations: []
 affinity: {}
 
 azure:
-kubernetesNamespace: default
+  kubernetesNamespace: default
   location: westeurope
   resourceGroup:
     create: false
