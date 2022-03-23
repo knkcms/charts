@@ -4,11 +4,8 @@ replicaCount: 1
 image:
   # -- The docker image repository to use
   repository: knkcms.azurecr.io/cms-content
-  # -- The docker image pull policy
-  pullPolicy: IfNotPresent
   # -- The docker image tag to use. 
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
