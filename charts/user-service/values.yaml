@@ -82,10 +82,14 @@ tolerations: []
 affinity: {}
 
 azure:
+  # -- Namespace where the CRDs are placed to
   kubernetesNamespace: default
+  # -- Set the Azure Location of the resources
   location: westeurope
   resourceGroup:
+    # -- Specifies whether a Resource Group should be created
     create: false
+    # -- Name of the Resource Group
     name: knkcms-dev
   postgres:
     server:
