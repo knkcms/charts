@@ -81,10 +81,16 @@ tolerations: []
 
 affinity: {}
 
-postgres:
+azure:
+kubernetesNamespace: default
+  location: westeurope
+  resourceGroup:
+    create: false
+    name: knkcms-dev
+  postgres:
     server:
       # -- Specifies whether a Postgres Server should be created
-      create: true
+      create: false
       # -- Name of the Postgres Server
       name: knkcms-dev
       # -- Version of the Postgres Server
@@ -100,10 +106,10 @@ postgres:
       port: 5432
       firewall:
         # -- Specifies whether to enable access of Azure Resources to the Postgres Server
-        createAzureRule: true
+        createAzureRule: false
     database:
       # -- Specifies whether a Postgres Database should be created
-      create: true
+      create: false
       # -- Name of the Postgres Database
       name: knkcms-dev
 
