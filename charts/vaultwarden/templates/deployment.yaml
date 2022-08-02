@@ -38,11 +38,11 @@ spec:
           - configMapRef:
             name: {{ include "vaultwarden.fullname" . }}
           env:
-            name: "ADMIN_TOKEN"
-            valueFrom:
-              secretKeyRef:
-                name: admin-token
-                key: admin-token
+            - name: "ADMIN_TOKEN"
+              valueFrom:
+                secretKeyRef:
+                  name: admin-token
+                  key: admin-token
 
           ports:
             - name: http
