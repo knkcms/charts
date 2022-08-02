@@ -1,0 +1,38 @@
+# Default values for azure-pg.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# -- Namespace where the CRDs are placed to
+kubernetesNamespace: default
+# -- Set the Azure Location of the resources
+location: westeurope
+resourceGroup:
+  # -- Specifies whether a Resource Group should be created
+  create: true
+  # -- Name of the Resource Group
+  name: knkcms-dev
+postgres:
+  server:
+    # -- Specifies whether a Postgres Server should be created
+    create: true
+    # -- Name of the Postgres Server
+    name: knkcms-dev
+    # -- Version of the Postgres Server
+    version: 13
+    sku:
+      # -- SKU Name of the Postgres Server
+      name: Standard_D4s_v3
+      # -- SKU Tier of the Postgres Server
+      tier: GeneralPurpose
+    # -- Username of the initial Postgres Server User
+    username: knkAdmin
+    # -- (int) Port of the Postgres Server
+    port: 5432
+    firewall:
+      # -- Specifies whether to enable access of Azure Resources to the Postgres Server
+      createAzureRule: true
+  database:
+    # -- Specifies whether a Postgres Database should be created
+    create: true
+    # -- Name of the Postgres Database
+    name: knkcms-dev
