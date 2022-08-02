@@ -73,7 +73,7 @@ spec:
       volumes:
         - name: data
           persistentVolumeClaim:
-            name: {{ include "vaultwarden.fullname" . }}
+            claimName: {{ include "vaultwarden.fullname" . }}
 
       {{- with .Values.nodeSelector }}
       nodeSelector:
