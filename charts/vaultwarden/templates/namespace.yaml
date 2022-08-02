@@ -1,6 +1,0 @@
-# kind: Namespace
-# apiVersion: v1
-# metadata:
-#   name: {{ include "vaultwarden.fullname" . }}
-#   labels:
-#     {{- include "vaultwarden.labels" . | nindent 4 }}
