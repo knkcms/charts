@@ -70,10 +70,10 @@ spec:
             - name: data
               mountPath: /data          
       
-      volume:
-        name: data
-        persistentVolumeClaim:
-          name: {{ include "vaultwarden.fullname" . }}
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            name: {{ include "vaultwarden.fullname" . }}
 
       {{- with .Values.nodeSelector }}
       nodeSelector:
