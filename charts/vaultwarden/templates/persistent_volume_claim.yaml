@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "vaultwarden.fullname" . }}
+  namespace: {{ include "vaultwarden.fullname" . }}
+  # labels: TODO
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi # TODO
+  storageClassName: "default" # TODO Empty string must be explicitly set otherwise default StorageClass will be set
+  # volumeName: foo-pv
