@@ -21,9 +21,9 @@ postgres:
     version: 13
     sku:
       # -- SKU Name of the Postgres Server
-      name: Standard_D4s_v3
+      name: Standard_B1ms # Standard_D4s_v3
       # -- SKU Tier of the Postgres Server
-      tier: GeneralPurpose
+      tier: Burstable # GeneralPurpose
     # -- Username of the initial Postgres Server User
     username: knkAdmin
     # -- (int) Port of the Postgres Server
