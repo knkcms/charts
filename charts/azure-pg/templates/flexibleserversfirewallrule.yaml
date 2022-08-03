@@ -1,5 +1,5 @@
 {{- if .Values.postgres.server.firewall.createAzureRule }}
-apiVersion: dbforpostgresql.azure.com/v1alpha1api20210601
+apiVersion: dbforpostgresql.azure.com/v1beta20210601
 kind: FlexibleServersFirewallRule
 metadata:
   name: allow-azure-internal

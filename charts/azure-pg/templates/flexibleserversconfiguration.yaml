@@ -1,11 +1,11 @@
-{{- if .Values.postgres.database.create }}
 apiVersion: dbforpostgresql.azure.com/v1beta20210601
-kind: FlexibleServersDatabase
+kind: FlexibleServersConfiguration
 metadata:
-  name: {{ .Values.postgres.database.name }}
+  name: pgaudit
   namespace: {{ .Values.kubernetesNamespace }}
 spec:
   owner:
     name: {{ .Values.postgres.server.name }}
-  charset: utf8
-{{- end }}
+  azureName: pgaudit.log
+  source: user-override
+  value: READ
