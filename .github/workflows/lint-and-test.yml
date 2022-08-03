@@ -1,5 +1,6 @@
 name: ct-linting-and-testing
 on:
+  workflow_dispatch:
   pull_request:
     paths:
       - "charts/**"
