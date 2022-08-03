@@ -1,0 +1,13 @@
+{{- if .Values.postgres.server.firewall.createAzureRule }}
+apiVersion: dbforpostgresql.azure.com/v1beta20210601
+kind: FlexibleServersFirewallRule
+metadata:
+  name: allow-azure-internal
+  namespace: {{ .Values.kubernetesNamespace }}
+spec:
+  owner:
+    name: {{ .Values.postgres.server.name }}
+  # The following address range allows any Azure Resource to connect to this server.
+  startIpAddress: 0.0.0.0
+  endIpAddress: 0.0.0.0
+{{- end }}

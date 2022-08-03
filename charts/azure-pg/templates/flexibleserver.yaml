@@ -1,0 +1,21 @@
+{{- if .Values.postgres.server.create }}
+apiVersion: dbforpostgresql.azure.com/v1beta20210601
+kind: FlexibleServer
+metadata:
+  name: {{ .Values.postgres.server.name }}
+  namespace: {{ .Values.kubernetesNamespace }}
+spec:
+  location: {{ .Values.location }}
+  owner:
+    name: {{ .Values.resourceGroup.name }}
+  version: {{ .Values.postgres.server.version | quote }}
+  sku:
+    name: {{ .Values.postgres.server.sku.name }}
+    tier: {{ .Values.postgres.server.sku.tier }}
+  administratorLogin: {{ .Values.postgres.server.username }}
+  administratorLoginPassword: 
+    name: postgres-secret
+    key: PASSWORD
+  storage:
+    storageSizeGB: 128
+{{- end }}
