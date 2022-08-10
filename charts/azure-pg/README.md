@@ -12,6 +12,7 @@ A Helm chart for Kubernetes
 
 ## Usage
 <fill out>
+huhu
 
 ## Values
 
