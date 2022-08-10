@@ -9,4 +9,3 @@ spec:
   azureName: pgaudit.log
   source: user-override
   value: READ
-  
