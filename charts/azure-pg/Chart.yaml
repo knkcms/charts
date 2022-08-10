@@ -22,3 +22,9 @@ version: 0.1.1
 # follow Semantic Versioning. They should reflect the version the application is using.
 # It is recommended to use it with quotes.
 appVersion: "1.16.0"
+
+# List all maintainers for this chart.
+maintainers:
+  - name: knkCMS
+    email: knkcms@knk.com
+    url: knk.com
