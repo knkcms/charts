@@ -1,9 +1,0 @@
-{{- if .Values.resourceGroup.create }}
-apiVersion: resources.azure.com/v1beta20200601
-kind: ResourceGroup
-metadata:
-  name: {{ .Values.resourceGroup.name }}-2
-  namespace: {{ .Values.kubernetesNamespace }}
-spec:
-  location: {{ .Values.location }}
-{{- end }}
