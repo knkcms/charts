@@ -1,3 +1,4 @@
+# -- kubernetesNamespace where the CRDs are placed to
 kubernetesNamespace: default
 location: westeurope
 resourceGroup:
