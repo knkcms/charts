@@ -7,7 +7,6 @@ metadata:
 spec:
   owner:
     name: {{ .Values.postgres.server.name }}
-  # The following address range allows any Azure Resource to connect to this server.
   startIpAddress: 0.0.0.0
   endIpAddress: 0.0.0.0
 {{- end }}
