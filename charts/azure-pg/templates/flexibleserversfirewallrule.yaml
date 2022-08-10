@@ -2,7 +2,7 @@
 apiVersion: dbforpostgresql.azure.com/v1beta20210601
 kind: FlexibleServersFirewallRule
 metadata:
-  name: allow-azure-internal
+  name: allow-azure-internal2
   namespace: {{ .Values.kubernetesNamespace }}
 spec:
   owner:
