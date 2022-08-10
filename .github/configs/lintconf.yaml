@@ -18,8 +18,7 @@ rules:
     min-spaces-after: 1
     max-spaces-after: 1
   comments:
-    require-starting-space: true
-    min-spaces-from-content: 1
+    require-starting-space: false
   document-end: disable
   document-start: disable # No --- to start a file
   empty-lines:
@@ -40,3 +39,4 @@ rules:
   trailing-spaces: enable
   truthy:
     level: warning
+  validate-maintainers: false

@@ -13,7 +13,7 @@ spec:
     name: {{ .Values.postgres.server.sku.name }}
     tier: {{ .Values.postgres.server.sku.tier }}
   administratorLogin: {{ .Values.postgres.server.username }}
-  administratorLoginPassword: 
+  administratorLoginPassword:
     name: postgres-secret
     key: PASSWORD
   storage:
