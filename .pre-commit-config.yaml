@@ -1,7 +1,0 @@
-repos:
-  - repo: https://github.com/knkcms/charts
-    rev: v0.0.0
-    hooks:
-      - id: helm-docs
-        args:
-          - --template-files=README.md.gotmpl

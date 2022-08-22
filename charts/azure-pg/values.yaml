@@ -1,9 +1,8 @@
-# -- kubernetesNamespace where the CRDs are placed to
 kubernetesNamespace: default
 location: westeurope
 resourceGroup:
   create: true
-  name: knkcms-dev
+  name: knkcms
 postgres:
   server:
     create: true
