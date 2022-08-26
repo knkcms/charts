@@ -2,10 +2,10 @@ apiVersion: dbforpostgresql.azure.com/v1beta20210601
 kind: FlexibleServersConfiguration
 metadata:
   name: pgaudit
-  namespace: {{ .Values.kubernetesNamespace }}
+  namespace: { { .Values.kubernetesNamespace } }
 spec:
   owner:
-    name: {{ .Values.postgres.server.name }}
+    name: { { .Values.postgres.server.name } }
   azureName: pgaudit.log
   source: user-override
   value: READ
