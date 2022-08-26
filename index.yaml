@@ -3,6 +3,20 @@ entries:
   azure-pg:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2022-08-26T11:53:31.646125087Z"
+    description: A Helm chart for Kubernetes
+    digest: eb81bcd910b27b1966aad904607fb08bb3939f3f0b57f44ee1ab2d6f26fe29b5
+    maintainers:
+    - email: knkcms@knk.com
+      name: knkCMS
+      url: knk.com
+    name: azure-pg
+    type: application
+    urls:
+    - https://github.com/knkcms/charts/releases/download/azure-pg-0.1.4/azure-pg-0.1.4.tgz
+    version: 0.1.4
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2022-08-22T17:52:26.265450239Z"
     description: A Helm chart for Kubernetes
     digest: 8be9705b973359799b2145dba15ff124c2d7cc244a6cc8d9c075cf6935c336b1
@@ -15,4 +29,4 @@ entries:
     urls:
     - https://github.com/knkcms/charts/releases/download/azure-pg-0.1.3/azure-pg-0.1.3.tgz
     version: 0.1.3
-generated: "2022-08-22T17:52:26.265457039Z"
+generated: "2022-08-26T11:53:31.646144787Z"
