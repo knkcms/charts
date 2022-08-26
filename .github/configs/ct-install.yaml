@@ -1,0 +1,6 @@
+chart-dirs:
+  - charts
+chart-repos:
+  - knkcms=https://knkcms.github.io/charts
+debug: true
+remote: origin
