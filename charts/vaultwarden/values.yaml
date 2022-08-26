@@ -1,13 +1,8 @@
-# Default values for vaultwarden.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
-
 replicaCount: 1
 
 image:
   repository: nginx
   pullPolicy: IfNotPresent
-  # Overrides the image tag whose default is the chart appVersion.
   tag: ""
 
 imagePullSecrets: []
@@ -15,26 +10,15 @@ nameOverride: ""
 fullnameOverride: ""
 
 serviceAccount:
-  # Specifies whether a service account should be created
   create: true
-  # Annotations to add to the service account
   annotations: {}
-  # The name of the service account to use.
-  # If not set and create is true, a name is generated using the fullname template
   name: ""
 
 podAnnotations: {}
 
 podSecurityContext: {}
-  # fsGroup: 2000
 
 securityContext: {}
-  # capabilities:
-  #   drop:
-  #   - ALL
-  # readOnlyRootFilesystem: true
-  # runAsNonRoot: true
-  # runAsUser: 1000
 
 service:
   type: ClusterIP
@@ -43,40 +27,24 @@ service:
 ingress:
   enabled: false
   className: ""
-  annotations: # {}
+  annotations:
     cert-manager.io/cluster-issuer: letsencrypt
     kubernetes.io/ingress.class: nginx
     kubernetes.io/tls-acme: true
-    # kubernetes.io/ingress.class: nginx
-    # kubernetes.io/tls-acme: "true"
   hosts:
     - host: chart-example.local
       paths:
         - path: /
           pathType: ImplementationSpecific
   tls: []
-  #  - secretName: chart-example-tls
-  #    hosts:
-  #      - chart-example.local
 
 resources: {}
-  # We usually recommend not to specify default resources and to leave this as a conscious
-  # choice for the user. This also increases chances charts run on environments with little
-  # resources, such as Minikube. If you do want to specify resources, uncomment the following
-  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
-  # limits:
-  #   cpu: 100m
-  #   memory: 128Mi
-  # requests:
-  #   cpu: 100m
-  #   memory: 128Mi
 
 autoscaling:
   enabled: false
   minReplicas: 1
   maxReplicas: 100
   targetCPUUtilizationPercentage: 80
-  # targetMemoryUtilizationPercentage: 80
 
 nodeSelector: {}
 
@@ -85,90 +53,12 @@ tolerations: []
 affinity: {}
 
 bitwarden:
-  # # Allow registration of new users
-  # # See: https://github.com/dani-garcia/bitwarden_rs#disable-registration-of-new-users
-  # signups_allowed: true
-
-  # # Allow current users invite new users even if registrations are otherwise disabled.
-  # # See: https://github.com/dani-garcia/bitwarden_rs#disable-invitations
-  # invitations_allowed: true
-
-  # # Email of the unique server administrator account
-  # # See: https://github.com/dani-garcia/bitwarden_rs#configure-server-administrator
-  # server_admin_email: admin@example.com
-
-  # # Websocket support for notifications
-  # # See: https://github.com/dani-garcia/bitwarden_rs#enabling-websocket-notifications
-  # websocket_enabled: true
-  # websocket_port: 3012
-
-  # # Needed for U2F authentification
-  # # See: https://github.com/dani-garcia/bitwarden_rs#enabling-u2f-authentication
-  # # TODO: Not supported currently
-  # # TODO: Automatically template this into the ingress configuration
-  # domain: https://bw.domain.tld
-
-  # # Configuration of YubiKey OTP
-  # # See: https://github.com/dani-garcia/bitwarden_rs#enabling-yubikey-otp-authentication
-  # yubico_client_id: YUBICO_CLIENT_ID
-  # yubico_secret_key: YUBICO_SECRET_KEY
-
-  # # API request size limits
-  # # See: https://github.com/dani-garcia/bitwarden_rs#changing-the-api-request-size-limit
-  # rocket_limits: "{json=10485760}"
-
-  # # Number of workers to spin up for the service
-  # # See: https://github.com/dani-garcia/bitwarden_rs#changing-the-number-of-workers
-  # rocket_workers: 10
-
-  # # SMTP settings, for sending out emails
-  # # See: https://github.com/dani-garcia/bitwarden_rs/blob/master/README.md#smtp-configuration
-  # smtp_host: smtp.domain.tld
-  # smtp_from: bitwarden@domain.tld
-  # smtp_from_name: bitwarden
-  # smtp_port: 587
-  # smtp_ssl: true
-  # smtp_explicit_tls: TODO
-  # smtp_auth_mechanism: TODO
-  # smtp_timeout: TODO
-  # smtp_username: username
-  # smtp_password: password
-
-  # Show password hint instead of sending it via email
-  # See: https://github.com/dani-garcia/bitwarden_rs#password-hint-display
   show_password_hints: false
-
-  # Enable Vault interface, when disabled, only API is served
-  # See: https://github.com/dani-garcia/bitwarden_rs#disabling-or-overriding-the-vault-interface-hosting
-  # TODO: enable settings web-vault content; init-container + shared storage + web-vault path?
   web_vault_enabled: true
-
-  # # Logging to a specific file
-  # # See: https://github.com/dani-garcia/bitwarden_rs#logging
-  # log_file=/data/bitwarden.log
-
-  # Port to serve http requests on. Define it accordingly to the service's target_port
   rocket_port: 8080
-
-  # NOTE: HTTPS cannot be set here, as it is derived from the ingress configuration below.
-  # NOTE: DATA_FOLDER cannot be set here, as it is derived from the storage.path below.
-  # TODO: Support DATABASE_URL, ATTACHMENTS_FOLDER, ICON_CACHE_FOLDER
-  # TODO: Support fail2ban?
-
-  # TODO
   database_url: TODO
-
-  # TODO
   data_folder: TODO
-
-  # TODO
   domain: TODO
-
-  # TODO
   signups_verify: TODO
-
-  # TODO
   signups_domains_whitelist: TODO
-
-  # TODO
   org_creation_users: TODO
