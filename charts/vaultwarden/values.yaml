@@ -53,12 +53,29 @@ tolerations: []
 affinity: {}
 
 bitwarden:
-  show_password_hints: false
-  web_vault_enabled: true
-  rocket_port: 8080
-  database_url: TODO
-  data_folder: TODO
-  domain: TODO
-  signups_verify: TODO
-  signups_domains_whitelist: TODO
-  org_creation_users: TODO
+  # show_password_hints: false
+  # web_vault_enabled: true
+  # rocket_port: 8080
+  # database_url: TODO
+  # data_folder: TODO
+  # domain: TODO
+  # signups_verify: TODO
+  # signups_domains_whitelist: TODO
+  # org_creation_users: TODO
+  database_url: DATABASE_URL
+  data_folder: DATA_FOLDER
+  smtp_host: SMTP_HOST
+  smtp_from: SMTP_FROM
+  smtp_from_name: SMTP_FROM_NAME
+  smtp_port: SMTP_PORT
+  smtp_ssl: SMTP_SSL
+  smtp_explicit_tls: SMTP_EXPLICIT_TLS
+  smtp_username: SMTP_USERNAME
+  smtp_password: SMTP_PASSWORD
+  smtp_timeout: 15
+  smtp_auth_machanism: Login
+  domain: DOMAIN
+  signups_allowed: true
+  signups_verify: true
+  signups_domains_whitelist: SIGNUPS_DOMAINS_WHITELIST
+  org_creation_users: all

@@ -9,3 +9,4 @@ data:
   {{- range $key, $val := .Values.bitwarden }}
   {{ $key | upper }}: {{ $val | quote }}
   {{- end}}
+  database_url: {{ include "vaultwarden.dbUrl" . }}

@@ -31,6 +31,60 @@ Create chart name and version as used by the chart label.
 {{- end }}
 
 {{/*
+Create database port.
+*/}}
+{{- define "db.port" -}}
+{{- default 5432 }}
+{{- end }}
+
+{{/*
+Create database fqdn.
+*/}}
+{{- define "db.fqdn" -}}
+{{- printf "%s.postgres.database.azure.com" .Chart.Name }}
+{{- end }}
+
+{{/*
+Create database name.
+*/}}
+{{- define "db.server" -}}
+{{- default .Chart.Name }}
+{{- end }}
+
+{{/*
+Create database name.
+*/}}
+{{- define "db.name" -}}
+{{- default .Chart.Name }}
+{{- end }}
+
+{{/*
+Create database user.
+*/}}
+{{- define "db.user" -}}
+{{- default "admin" }}
+{{- end }}
+
+{{/*
+Create database password.
+*/}}
+{{- define "db.password" -}}
+# retrieve the secret data using lookup function and when not exists, return an empty dictionary / map as result
+{{- $secret := (lookup "v1" "Secret" .Release.Namespace "admin-token") | default dict }}
+# set $jwtSecret to existing secret data or generate a random one when not exists
+{{- $jwtSecret := (get $secret "admin-token") | default (randAlphaNum 32 | b64enc) }}
+{{- default $jwtSecret | b64enc | quote }}
+{{- end }}
+
+{{/*
+Create database url.
+"postgresql://${var.postgres_user}%40${data.azurerm_postgresql_server.pg.name}:${var.postgres_password}@${data.azurerm_postgresql_server.pg.fqdn}:${var.postgres_port}/${azurerm_postgresql_database.vaultwarden.name}"
+*/}}
+{{- define "vaultwarden.dbUrl" -}}
+{{- printf "postgresql://%s%40:%s@%s:%s/%s" (include "db.user" .) (include "db.server" .) (include "db.password" .) (include "db.fqdn" .) (include "db.port" .) (include "db.name" .) }}
+{{- end }}
+
+{{/*
 Common labels
 */}}
 {{- define "vaultwarden.labels" -}}
