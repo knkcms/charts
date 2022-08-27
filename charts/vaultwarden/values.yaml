@@ -1,0 +1,107 @@
+replicaCount: 1
+
+image:
+  repository: nginx
+  pullPolicy: IfNotPresent
+  tag: ""
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  create: true
+  annotations: {}
+  name: ""
+
+podAnnotations: {}
+
+podSecurityContext: {}
+
+securityContext: {}
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: false
+  className: ""
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
+    kubernetes.io/ingress.class: nginx
+    kubernetes.io/tls-acme: true
+  hosts:
+    - host: chart-example.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []
+
+resources: {}
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+bitwarden:
+  # show_password_hints: false
+  # web_vault_enabled: true
+  # rocket_port: 8080
+  # database_url: TODO
+  # data_folder: TODO
+  # domain: TODO
+  # signups_verify: TODO
+  # signups_domains_whitelist: TODO
+  # org_creation_users: TODO
+  database_url: DATABASE_URL
+  data_folder: DATA_FOLDER
+  smtp_host: SMTP_HOST
+  smtp_from: SMTP_FROM
+  smtp_from_name: SMTP_FROM_NAME
+  smtp_port: SMTP_PORT
+  smtp_ssl: SMTP_SSL
+  smtp_explicit_tls: SMTP_EXPLICIT_TLS
+  smtp_username: SMTP_USERNAME
+  smtp_password: SMTP_PASSWORD
+  smtp_timeout: 15
+  smtp_auth_machanism: Login
+  domain: DOMAIN
+  signups_allowed: true
+  signups_verify: true
+  signups_domains_whitelist: SIGNUPS_DOMAINS_WHITELIST
+  org_creation_users: all
+
+azurepg:
+  enabled: true
+  location: westeurope
+  resourceGroup:
+    create: true
+    name: knkcms
+  postgres:
+    server:
+      create: true
+      name: knkcms-dev
+      version: 13
+      sku:
+        name: Standard_B1ms
+        tier: Burstable
+      username: knkAdmin
+      secret:
+        create: true
+        name: azurepg-secret
+        key: PASSWORD
+      port: 5432
+      firewall:
+        createAzureRule: true
+    database:
+      create: true
+      name: knkcms-dev

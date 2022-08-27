@@ -1,0 +1,21 @@
+apiVersion: v2
+name: vaultwarden
+description: A Helm chart for Kubernetes
+
+icon: https://cncf-branding.netlify.app/img/projects/argo/icon/color/argo-icon-color.png
+
+type: application
+version: 0.1.0
+
+appVersion: "1.16.0"
+
+maintainers:
+  - name: knkCMS
+    email: knkcms@knk.com
+    url: knk.com
+
+# dependencies:
+#   - condition: azurepg.enabled
+#     name: azurepg
+#     version: "0.1.4"
+#     repository: https://knkcms.github.io/charts

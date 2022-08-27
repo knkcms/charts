@@ -2,10 +2,14 @@
 # Don't add the 'debug' attribute, otherwise the workflow won't work anymore
 # Only Used for the CT Lint Stage
 remote: origin
-target-branch: main
+# target-branch: main
 chart-dirs:
   - charts
+chart-repos:
+  - knkcms=https://knkcms.github.io/charts
 helm-extra-args: "--timeout 600s"
+check-version-increment: true
+debug: true
 validate-chart-schema: true
 validate-chart-values: true
 validate-maintainers: true
