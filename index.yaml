@@ -3,6 +3,20 @@ entries:
   azure-pg:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2022-08-27T22:54:55.651954423Z"
+    description: A Helm chart for Kubernetes
+    digest: 9ddcff3e23a4cdf8e39ce216279709e16454fa19b58dece02ebcd00a339b6a07
+    maintainers:
+    - email: knkcms@knk.com
+      name: knkCMS
+      url: knk.com
+    name: azure-pg
+    type: application
+    urls:
+    - https://github.com/knkcms/charts/releases/download/azure-pg-0.1.5/azure-pg-0.1.5.tgz
+    version: 0.1.5
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2022-08-26T11:53:31.646125087Z"
     description: A Helm chart for Kubernetes
     digest: eb81bcd910b27b1966aad904607fb08bb3939f3f0b57f44ee1ab2d6f26fe29b5
@@ -29,4 +43,20 @@ entries:
     urls:
     - https://github.com/knkcms/charts/releases/download/azure-pg-0.1.3/azure-pg-0.1.3.tgz
     version: 0.1.3
-generated: "2022-08-26T11:53:31.646144787Z"
+  vaultwarden:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-08-27T22:54:55.750892113Z"
+    description: A Helm chart for Kubernetes
+    digest: 06df42f7aefeb121229e524a037788382894711f657d51335179cfc7e31c1e55
+    icon: https://cncf-branding.netlify.app/img/projects/argo/icon/color/argo-icon-color.png
+    maintainers:
+    - email: knkcms@knk.com
+      name: knkCMS
+      url: knk.com
+    name: vaultwarden
+    type: application
+    urls:
+    - https://github.com/knkcms/charts/releases/download/vaultwarden-0.1.0/vaultwarden-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-08-27T22:54:55.750911113Z"
