@@ -34,7 +34,7 @@ Create chart name and version as used by the chart label.
 Create the admin token for vaultwarden - do not include special character.
 */}}
 {{- define "vaultwarden.adminToken" -}}
-{{- default randAlphaNum 64 | b64enc | quote }}
+{{- default (randAlphaNum 64 | b64enc | quote)  }}
 {{- end }}
 
 {{/*
