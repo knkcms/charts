@@ -1,6 +1,0 @@
-dependencies:
-- name: azure-pg
-  repository: https://knkcms.github.io/charts
-  version: 0.1.4
-digest: sha256:1b0d81a8bbde47283f1ea48534827112697c65667412d961ff64730a91dae2ad
-generated: "2022-08-26T14:19:33.7899143+02:00"

@@ -15,7 +15,7 @@ maintainers:
     url: knk.com
 
 dependencies:
-  - condition: azurepg.enabled
-    name: azurepg
-    version: "0.1.4"
-    repository: https://knkcms.github.io/charts
+  # - condition: azurepg.enabled
+  #   name: azurepg
+  #   version: "0.1.4"
+  #   repository: https://knkcms.github.io/charts
