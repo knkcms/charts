@@ -5,7 +5,7 @@ description: A Helm chart for Kubernetes
 icon: https://cncf-branding.netlify.app/img/projects/argo/icon/color/argo-icon-color.png
 
 type: application
-version: 0.1.0
+version: 0.1.1
 
 appVersion: "1.16.0"
 
@@ -14,8 +14,8 @@ maintainers:
     email: knkcms@knk.com
     url: knk.com
 
-# dependencies:
-#   - condition: azurepg.enabled
-#     name: azurepg
-#     version: "0.1.4"
-#     repository: https://knkcms.github.io/charts
+dependencies:
+  - condition: azurepg.enabled
+    name: azurepg
+    version: "0.1.5"
+    repository: https://knkcms.github.io/charts
