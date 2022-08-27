@@ -80,7 +80,7 @@ bitwarden:
   signups_domains_whitelist: SIGNUPS_DOMAINS_WHITELIST
   org_creation_users: all
 
-azurepg:
+azure-pg:
   enabled: true
   location: westeurope
   resourceGroup:
