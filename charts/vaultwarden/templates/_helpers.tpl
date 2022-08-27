@@ -31,6 +31,13 @@ Create chart name and version as used by the chart label.
 {{- end }}
 
 {{/*
+Create the admin token for vaultwarden - do not include special character.
+*/}}
+{{- define "vaultwarden.adminToken" -}}
+{{- default randAlphaNum 64 | b64enc | quote }}
+{{- end }}
+
+{{/*
 Create database port.
 */}}
 {{- define "db.port" -}}

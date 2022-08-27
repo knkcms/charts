@@ -79,3 +79,29 @@ bitwarden:
   signups_verify: true
   signups_domains_whitelist: SIGNUPS_DOMAINS_WHITELIST
   org_creation_users: all
+
+azurepg:
+  enabled: true
+  location: westeurope
+  resourceGroup:
+    create: true
+    name: knkcms
+  postgres:
+    server:
+      create: true
+      name: knkcms-dev
+      version: 13
+      sku:
+        name: Standard_B1ms
+        tier: Burstable
+      username: knkAdmin
+      secret:
+        create: true
+        name: azurepg-secret
+        key: PASSWORD
+      port: 5432
+      firewall:
+        createAzureRule: true
+    database:
+      create: true
+      name: knkcms-dev
