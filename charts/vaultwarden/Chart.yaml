@@ -14,8 +14,8 @@ maintainers:
     email: knkcms@knk.com
     url: knk.com
 
-dependencies:
-  - condition: azurepg.enabled
-    name: azurepg
-    version: "0.1.4"
-    repository: https://knkcms.github.io/charts
+# dependencies:
+#   - condition: azurepg.enabled
+#     name: azurepg
+#     version: "0.1.4"
+#     repository: https://knkcms.github.io/charts
