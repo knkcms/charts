@@ -17,5 +17,5 @@ maintainers:
 dependencies:
   - condition: azurepg.enabled
     name: azurepg
-    version: "0.1.5"
+    version: "0.1.4"
     repository: https://knkcms.github.io/charts
