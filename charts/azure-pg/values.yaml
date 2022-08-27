@@ -12,6 +12,7 @@ postgres:
       name: Standard_B1ms
       tier: Burstable
     username: knkAdmin
+    password: Password4knk
     port: 5432
     firewall:
       createAzureRule: true
