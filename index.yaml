@@ -61,6 +61,26 @@ entries:
   vaultwarden:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2022-08-27T23:30:55.275894924Z"
+    dependencies:
+    - condition: azurepg.enabled
+      name: azurepg
+      repository: https://knkcms.github.io/charts
+      version: 0.1.6
+    description: A Helm chart for Kubernetes
+    digest: 352a7f4508d2dc603584f8e53f63e2aa37a8234bd8d138a8415096159e88c776
+    icon: https://cncf-branding.netlify.app/img/projects/argo/icon/color/argo-icon-color.png
+    maintainers:
+    - email: knkcms@knk.com
+      name: knkCMS
+      url: knk.com
+    name: vaultwarden
+    type: application
+    urls:
+    - https://github.com/knkcms/charts/releases/download/vaultwarden-0.1.2/vaultwarden-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2022-08-27T23:14:12.4537194Z"
     description: A Helm chart for Kubernetes
     digest: 75c5dde3ea10af6cb4c791850284a5bcec2ae40770f2943f862c8607d29c5473
@@ -89,4 +109,4 @@ entries:
     urls:
     - https://github.com/knkcms/charts/releases/download/vaultwarden-0.1.0/vaultwarden-0.1.0.tgz
     version: 0.1.0
-generated: "2022-08-27T23:14:12.453734408Z"
+generated: "2022-08-27T23:30:55.275914124Z"
